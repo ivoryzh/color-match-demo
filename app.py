@@ -3,7 +3,7 @@
 IvoryOS Main Script
 Generated: 2026-06-04T22:51:49.653Z
 """
-
+from ivoryos.config import DemoConfig
 from scripts.sim_instruments import SimRoboticArm
 from scripts.sim_instruments import SimStirPlate
 from ivorysos_colour_match_sdl.sdl import ColourMatcher
@@ -11,7 +11,7 @@ from scripts.sim_instruments import SimCappingStation
 from scripts.sim_instruments import SimLiquidAdditionStation
 from colour_match_web.plugin import colour_match_sdl_bp
 import ivoryos
-
+from ivoryos.config import DemoConfig
 # Initialize hardware
 try:
     robotic_arm = SimRoboticArm()
@@ -24,4 +24,4 @@ except Exception as e:
 
 # Start IvoryOS web interface
 if __name__ == "__main__":
-    ivoryos.run(__name__, port=8000, blueprint_plugins=[colour_match_sdl_bp])
+    ivoryos.run(__name__, port=7860, config=DemoConfig(), blueprint_plugins=[colour_match_sdl_bp])
