@@ -1,0 +1,375 @@
+{
+  "deck": "main",
+  "name": "colour_match_ryb_sunset_orange",
+  "author": "admin",
+  "status": "editing",
+  "id_order": {
+    "prep": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "script": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "cleanup": [
+      "1"
+    ]
+  },
+  "script_dict": {
+    "prep": [
+      {
+        "id": 1,
+        "args": {
+          "b": 83,
+          "g": 94,
+          "r": 253
+        },
+        "uuid": 147656707717382,
+        "action": "set_target_rgb",
+        "return": "",
+        "arg_types": {
+          "b": "int",
+          "g": "int",
+          "r": "int"
+        },
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 2,
+        "args": {
+          "volume_ml": 10
+        },
+        "uuid": 232026355855618,
+        "action": "set_total_volume_ml",
+        "return": "",
+        "arg_types": {
+          "volume_ml": ""
+        },
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 3,
+        "args": {
+          "folder_path": null
+        },
+        "uuid": 115572015996317,
+        "action": "create_new_colour_match_data_folder",
+        "return": "",
+        "arg_types": {
+          "folder_path": [
+            "str",
+            "NoneType"
+          ]
+        },
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 4,
+        "args": {},
+        "uuid": 59496184844626,
+        "action": "save_target_rgb_image_to_data_folder",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 5,
+        "args": {
+          "statement": "check data folder created"
+        },
+        "uuid": 209759977421430,
+        "action": "pause",
+        "return": "",
+        "arg_types": {
+          "statement": "str"
+        },
+        "instrument": "pause"
+      }
+    ],
+    "script": [
+      {
+        "id": 1,
+        "args": {},
+        "uuid": 125097038743387,
+        "action": "pick_up_next_vial_in_tray",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 2,
+        "args": {},
+        "uuid": 53775779186950,
+        "action": "place_vial_on_capping_station",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 3,
+        "args": {},
+        "uuid": 182808009280216,
+        "action": "uncap_vial",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.capping_station",
+        "batch_action": false
+      },
+      {
+        "id": 4,
+        "args": {},
+        "uuid": 21678380602259,
+        "action": "pick_up_vial_on_capping_station",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 5,
+        "args": {},
+        "uuid": 233255795404867,
+        "action": "place_vial_on_liquid_addition_station",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 6,
+        "args": {
+          "red_ml": "#red_ml"
+        },
+        "uuid": 264709186641374,
+        "action": "add_red_to_vial",
+        "return": "",
+        "arg_types": {
+          "red_ml": "float"
+        },
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 7,
+        "args": {
+          "yellow_ml": "#yellow_ml"
+        },
+        "uuid": 49914961353641,
+        "action": "add_yellow_to_vial",
+        "return": "",
+        "arg_types": {
+          "yellow_ml": "float"
+        },
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 8,
+        "args": {
+          "blue_ml": "#blue_ml"
+        },
+        "uuid": 29017096842634,
+        "action": "add_blue_to_vial",
+        "return": "",
+        "arg_types": {
+          "blue_ml": "float"
+        },
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 9,
+        "args": {},
+        "uuid": 43246850453368,
+        "action": "add_remaining_volume_as_water_to_vial",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 10,
+        "args": {},
+        "uuid": 31649868330559,
+        "action": "pick_up_vial_on_liquid_addition_station",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 11,
+        "args": {},
+        "uuid": 34708913936397,
+        "action": "place_vial_on_capping_station",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 12,
+        "args": {},
+        "uuid": 124395510247093,
+        "action": "cap_vial",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.capping_station",
+        "batch_action": false
+      },
+      {
+        "id": 13,
+        "args": {},
+        "uuid": 184002617456032,
+        "action": "pick_up_vial_on_capping_station",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 14,
+        "args": {},
+        "uuid": 8587873457160,
+        "action": "place_vial_on_stir_plate",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 15,
+        "args": {},
+        "uuid": 184222790117488,
+        "action": "start_stirring",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.stir_plate",
+        "batch_action": false
+      },
+      {
+        "id": 16,
+        "args": {
+          "statement": 2
+        },
+        "uuid": 16118552479408,
+        "action": "wait",
+        "return": "",
+        "arg_types": {
+          "statement": "float"
+        },
+        "instrument": "wait"
+      },
+      {
+        "id": 17,
+        "args": {},
+        "uuid": 168068342778438,
+        "action": "stop_stirring",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.stir_plate",
+        "batch_action": false
+      },
+      {
+        "id": 18,
+        "args": {},
+        "uuid": 252487484977861,
+        "action": "take_photo_of_vial_and_analyze_colour_difference",
+        "return": "colour_difference_detected",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      },
+      {
+        "id": 19,
+        "args": {},
+        "uuid": 14994489691147,
+        "action": "pick_up_vial_on_stir_plate",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.robotic_arm",
+        "batch_action": false
+      },
+      {
+        "id": 20,
+        "args": {},
+        "uuid": 8483315630934,
+        "action": "return_vial_to_tray",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      }
+    ],
+    "cleanup": [
+      {
+        "id": 1,
+        "args": {},
+        "uuid": 261979449006371,
+        "action": "generate_colour_difference_plot",
+        "return": "",
+        "arg_types": {},
+        "coroutine": false,
+        "instrument": "deck.colour_matcher",
+        "batch_action": false
+      }
+    ]
+  },
+  "editing_type": "script",
+  "time_created": "2025-11-30 08:31:03",
+  "last_modified": "2025-11-30 09:12:53",
+  "python_script": null,
+  "blocks_included": false,
+  "needs_call_human": true
+}
