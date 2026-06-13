@@ -2,7 +2,6 @@
 
 FROM python:3.10-slim
 WORKDIR /app
-ENV URL_PREFIX="/sdl"
 
 # Copy all project files
 COPY . /app

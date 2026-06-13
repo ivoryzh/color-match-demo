@@ -1,4 +1,4 @@
 ax-platform
-ivoryos==1.6.4
-colour-match-sdl[full]==0.1.3
-opencv-python
+ivoryos==1.6.5
+colour-match-sdl[full]==0.1.4
+opencv-python-headless

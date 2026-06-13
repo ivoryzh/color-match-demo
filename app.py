@@ -12,6 +12,9 @@ from scripts.sim_instruments import SimLiquidAdditionStation
 from colour_match_web.plugin import colour_match_sdl_bp
 import ivoryos
 from ivoryos.config import DemoConfig
+
+from color_match_plugin.plugin import story_bp
+
 # Initialize hardware
 try:
     robotic_arm = SimRoboticArm()
@@ -24,4 +27,4 @@ except Exception as e:
 
 # Start IvoryOS web interface
 if __name__ == "__main__":
-    ivoryos.run(__name__, port=7860, config=DemoConfig(), blueprint_plugins=[colour_match_sdl_bp])
+    ivoryos.run(__name__, port=7860, config=DemoConfig(), blueprint_plugins=[colour_match_sdl_bp, story_bp])
