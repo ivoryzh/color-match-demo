@@ -1,4 +1,8 @@
 ax-platform
-ivoryos==1.6.5
-colour-match-sdl[full]==0.1.4
+ivoryos
+colour-match-sdl
+numpy
+matplotlib
+plotly
+colormath==3.0.0
 opencv-python-headless
